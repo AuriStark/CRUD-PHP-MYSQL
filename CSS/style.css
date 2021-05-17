@@ -1,0 +1,103 @@
+html {
+    background-color: rgb(236, 236, 229);
+}
+
+body {
+    font: 16px arial;
+    margin: 0;
+    padding: 0;
+    background: #d1d1d1;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 50px auto 0;
+    background-color: #fff;
+}
+
+#header {
+    text-align: center;
+    background-color: #BC1A3A;
+    padding: 10px;
+}
+
+#header h1 {
+    color: #fff;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#menu {
+    background-color: #333;
+}
+
+#menu ul {
+    font-size: 0;
+    padding: 0 10 px;
+    margin: 0;
+    list-style: none;
+}
+
+#menu ul li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 10px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+#menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#main-container {
+    padding: 25px;
+    min-height: 400px;
+}
+
+#main-content h2 {
+    margin: 0 0 10px;
+    text-transform: capitalize;
+}
+
+#main-container table {
+    width: 100%;
+    background-color: #555;
+    margin: 0 0 20px;
+}
+
+#main-container table th {
+    color: #fff;
+    background-color: #333;
+    text-transform: uppercase;
+}
+
+#main-content table th:last-child {
+    width: 130px;
+}
+
+#main-content table td {
+    background-color: #fff;
+}
+
+#main-content table td a {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    color: #fff;
+    background-color: #273dab;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+#main-content table td a:nth-child(2) {
+    background-color: #b31d15;
+    margin: 0 0 0 5px;
+}
