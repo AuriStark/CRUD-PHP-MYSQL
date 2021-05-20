@@ -1,8 +1,9 @@
 <?php
     include 'header.php';
 ?>
-<div id="main-container">
-    <h2> All Records </h2>
+<div class="container mt-5" id="mainContainer">
+    <h2 class="mb-2"> All Records </h2>
+    
     <?php
         include 'config.php';
 
@@ -11,36 +12,46 @@
 
         if(mysqli_num_rows($result) > 0){
     ?>
-    
-    <table cellpading="7px">
+    <table class="table table-striped" cellpading="7px">
         <thead>
-            <th> Id </th>
-            <th> Name </th>
-            <th> Address </th>
-            <th> Class </th>
-            <th> Phone </th>
-            <th> Action </th>
+            <tr>
+                <th scope="col"> Id </th>
+                <th scope="col"> Name </th>
+                <th scope="col"> Address </th>
+                <th scope="col"> Class </th>
+                <th scope="col"> Phone </th>
+                <th scope="col"> Action </th>
+            </tr>
         </thead>
+
         <tbody>
-            <?php 
+            <?php
                 while($row = mysqli_fetch_assoc($result)){
             ?>
-            <tr><?php echo $row['sid']; ?></tr>
-            <tr><?php echo $row['sname']; ?></tr>
-            <tr><?php echo $row['saddress']; ?></tr>
-            <tr><?php echo $row['cname']; ?></tr>
-            <tr><?php echo $row['sphone']; ?></tr>
+
             <tr>
-                <a href='edit.php?id=<?php echo $row['sid'];?>'> Edit </a>
-                <a href='delete-inline.php?id=<?php echo $row['sid']; ?>'> Delete </a>
+                <tH scope="row"><?php echo $row['sid']; ?></th>
+                <td><?php echo $row['sname']; ?></td>
+                <td><?php echo $row['saddress']; ?></td>
+                <td><?php echo $row['cname']; ?></td>
+                <td><?php echo $row['sphone']; ?></td>
+                <td>
+                    <a href='edit.php?id=<?php echo $row['sid'];?>'> Edit</a> &nbsp;&nbsp;
+                    <a href='delete-inline.php?id=<?php echo $row['sid']; ?>'> Delete </a>
+                </td>
             </tr>
+
             <?php } ?>
         </tbody>
+       
     </table>
+
     <?php }else{
         echo "<h2> No Record Found</h2>";
     } mysqli_close($conn) ?>
+
 </div>
-</div>
-</body>
-</html>
+
+<?php
+    include "footer.php";
+?>
