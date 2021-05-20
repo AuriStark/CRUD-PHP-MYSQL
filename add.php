@@ -7,25 +7,25 @@
     <form class="post-form" action="savedata.php" method="post" >
         <div class="form-group row">
             <label for="nameFormControl">Name</label>
-            <input type="name" class="form-control" id="nameFormControl" placeholder="name" name="sname" required/>
+            <input type="text" class="form-control" id="nameFormControl" placeholder="name" name="sname" required/>
         </div>
         <div class="form-group row">
             <label for="adressFormControl">Adress</label>
-            <input type="adress" class="form-control" id="adressFormControl" placeholder="adress" name="sadress" required/>
+            <input type="text" class="form-control" id="adressFormControl" placeholder="adress" name="sadress" required/>
         </div>
         <div class="form-group row">
             <label for="classFormControl">Class</label>
-            <select class="form-control" id="classFormControl" required>
-            <option>Select Class</option>
+            <select class="form-control" id="classFormControl" name="sclass" required>
+            <option value=" " selected disabled>Select Class</option>
 
             <?php 
-                include "config.php";
+                include 'config.php';
                 $sql ="SELECT * FROM studentclass" ;
-                $result = mysqli_query($conn, $sql) or die("Quers Unsuccessful.");
+                $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
                 while($row = mysqli_fetch_assoc($result)){
             ?>
-            <option> 
+            <option value="<?php echo $row['cid'];?>"> 
                 <?php echo $row['cname'];?>
             </option>
             
@@ -35,10 +35,10 @@
         </div>
         <div class="form-group">
             <label for="phoneFormControl">Phone</label>
-            <input type="phone" class="form-control" id="phoneFormControl" placeholder="phone" name="sphone" required/>
+            <input type="text" class="form-control" id="phoneFormControl" placeholder="phone" name="sphone" required/>
         </div>  
         <div class="form-group">
-            <input type="button" value="Save"  class="btn">
+            <input type="submit" value="Save"  class="btn">
         </div> 
     </form>
 </div>
